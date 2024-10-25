@@ -20,7 +20,7 @@
         android:gravity="center"/>
 
     <TextView
-        android:id="@+id/showError"
+        android:id="@+id/tvShowError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
@@ -28,14 +28,31 @@
         android:textSize="16sp"
         android:textColor="@color/red"/>
 
-    <EditText
-        android:id="@+id/edtInput"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:minHeight="48dp"
-        android:hint="@string/input_amount"
-        android:inputType="number"/>
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tvBaseCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"/>
+
+        <EditText
+            android:id="@+id/edtInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tvBaseCurrency"
+            android:layout_marginStart="10dp"
+            android:minHeight="48dp"
+            android:hint="1"
+            android:inputType="number"
+            android:textSize="25sp"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/labelSelectCurrency"
@@ -43,63 +60,50 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="@string/select_currency"
-        android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
 
     <Spinner
-        android:id="@+id/selectCurrency"
+        android:id="@+id/spnSelectCurrency"
         android:layout_width="match_parent"
-        android:layout_height="48dp"/>
+        android:layout_height="48dp"
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
+        android:backgroundTint="@color/green"
         android:text="@string/convert"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"/>
 
-    <GridLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:columnCount="2">
+        android:layout_marginTop="20dp">
 
         <TextView
+            android:id="@+id/tvConvertedCurrency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/original_money"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:layout_centerVertical="true"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"/>
 
         <TextView
-            android:id="@+id/originalMoney"
+            android:id="@+id/tvConvertedMoney"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textSize="16sp"/>
-    </GridLayout>
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:columnCount="2">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/converted_money"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/convertedMoney"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:textSize="16sp"/>
-    </GridLayout>
+            android:layout_toEndOf="@id/tvConvertedCurrency"
+            android:layout_marginStart="30dp"
+            android:layout_centerVertical="true"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
 
 </LinearLayout>

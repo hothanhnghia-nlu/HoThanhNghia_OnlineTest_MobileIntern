@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface ApiService {
     @GET("latest")
-    fun getLatestExchangeRates(
+    fun getExchangeRates(
         @Query("access_key") accessKey: String,
     ): Call<ExchangeRates>
 }
